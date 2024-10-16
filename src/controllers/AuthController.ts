@@ -45,7 +45,7 @@ export const signUpController = async (
     const token = await jwtSign();
 
     const response = res
-      .cookie("token", token, { sameSite: "none", secure: true })
+      .cookie("token", token, { sameSite: "none", secure: true, expires: new Date(Date.now() + (24 * 3600000 * 7)) })
       .status(200)
       .json({
         ...newUser,
@@ -96,7 +96,7 @@ export const signInController = async (
 
     const token = await jwtSign();
     const response = res
-      .cookie("token", token, { sameSite: "none" ,secure:true})
+      .cookie("token", token, { sameSite: "none", secure: true,expires:new Date(Date.now() + (24 * 3600000 * 7))})
       .status(200)
       .json({
         ...user,
