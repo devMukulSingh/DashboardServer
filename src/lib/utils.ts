@@ -1,6 +1,9 @@
 import { addDays, format } from "date-fns";
 
-export const base_url_client = process.env.NODE_ENV === 'production' ? 'https://roc8-dashboard-client.vercel.app' : `http://localhost:3000`;
+export const base_url_client =
+  process.env.NODE_ENV === "production"
+    ? "https://roc8-dashboard-client.vercel.app"
+    : `http://localhost:3000`;
 
 export interface IexcelData {
   A: number;
